@@ -1,5 +1,5 @@
 const axios = require('axios')
-const Ticker = require('../models/ticker')
+const Ticker = require('../models/Ticker')
 const cron = require('node-cron')
 const fetchStockOverview = require('../utils/apiClient')
 
