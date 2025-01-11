@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const cors = require('cors')
 const morgan = require('morgan')
 const helmet = require('helmet')
@@ -21,9 +22,7 @@ if (NODE_ENV === 'development') {
 
 dbConnect()
 
-app.get('/', (req, res) => {
-	res.send('Welcome to my API.')
-})
+app.use(express.static(path.join(__dirname, 'public')))
 
 // app.use('/api/v1', require('./routes'))
 

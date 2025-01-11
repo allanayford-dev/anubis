@@ -6,6 +6,9 @@ async function dbConnect() {
 	try {
 		await mongoose.connect(DB_URL, {
 			dbName: dbName,
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+			serverSelectionTimeoutMS: 5000,
 		})
 		console.log(`Connected to MongoDB: ${dbName}`)
 	} catch (error) {
